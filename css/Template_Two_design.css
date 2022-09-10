@@ -198,7 +198,7 @@ header nav .form i {
 .landing {
   min-height: 100vh;
   background-color: #1f2021;
-  background-image: url('images/landing.jpg ');
+  background-image: url(../images/landing.jpg);
   background-size: cover;
   position: relative;
 }
@@ -338,7 +338,7 @@ header nav .form i {
   padding-bottom: var(--sercices-padding);
   height: 600px;
   position: relative;
-  background-image: url(images/design-features.jpg );
+  background-image: url(../images/design-features.jpg);
   background-size: cover;
   display: flex;
   align-items: center;
