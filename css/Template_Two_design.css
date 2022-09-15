@@ -467,7 +467,7 @@ header nav .form i {
   padding: 5px 10px;
   margin-left: 5px;
   font-size: 15px;
-}
+  }
 }
 .portfolio .container ul .active {
   background-color: var(--main-color);
@@ -530,7 +530,6 @@ header nav .form i {
   width: fit-content;
 }
 /* End Portfolio */
-
 /* Start Video section  */
 .video-section {
   position: relative;
