@@ -4,6 +4,7 @@
   --transparent-color : rgb(15 116 143 / 60%) ;
   --sercices-padding : 100px ;
   --p-color : #777 ;
+  --transition : 0.3s;
 }
 /* End variables */
 
@@ -51,6 +52,21 @@
 /* End Components  */
 
 /* Start global rules */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #eee;
+  box-shadow: inset 0px 0px 3px 1px rgb(155, 155, 155) ;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--transparent-color );
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--main-color);
+  border-radius: 10px;
+}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -194,11 +210,40 @@ header nav .form i {
 }
 /* End header  */
 
+/* Start the up button  */
+.up {
+  position: fixed;
+  width: 35px;
+  height: 35px;
+  right: 25px;
+  bottom: 25px;
+  z-index: 5;
+  display: block;
+}
+.up a {
+  background: linear-gradient(to right, var(--transparent-color) 50%, var(--main-color) 50%) scroll right bottom/210% 100% var(--main-color);
+  transition: all linear 0.3s;
+  color: white;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  text-align: center;
+}
+.up a:hover {
+  background-position: left ;
+} 
+.up a i {
+  position: relative;
+  top: 7.5px;
+}
+/* End the up button  */
+
 /* Start landing section  */
 .landing {
   min-height: 100vh;
   background-color: #1f2021;
-  background-image: url('/Template_Two/images/landing.jpg ');
+  background-image: url(/images/landing.jpg);
   background-size: cover;
   position: relative;
 }
@@ -338,7 +383,7 @@ header nav .form i {
   padding-bottom: var(--sercices-padding);
   height: 600px;
   position: relative;
-  background-image: url(/Template_Two/images/design-features.jpg );
+  background-image: url(/images/design-features.jpg );
   background-size: cover;
   display: flex;
   align-items: center;
@@ -404,6 +449,165 @@ header nav .form i {
 /* Start Portfolio */
 .portfolio {
   padding-top: var(--sercices-padding);
-  padding-bottom: var(--sercices-padding);
+}
+.portfolio .container ul {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.portfolio .container ul li {
+  padding: 10px 20px;
+  margin-left: 10px;
+  text-transform: uppercase;
+  font-size: 17px;
+  font-weight: normal;
+}
+@media (max-width : 768px) {
+  .portfolio .container ul li {
+  padding: 5px 10px;
+  margin-left: 5px;
+  font-size: 15px;
+}
+}
+.portfolio .container ul .active {
+  background-color: var(--main-color);
+  color: white;
+}
+.portfolio .images {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 25%;
+}
+.portfolio .images .box {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio .images .box:hover .caption{
+  bottom: 0;
+}
+@media (min-width: 768px) {
+  .portfolio .images .box {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 1199px) {
+  .portfolio .images .box {
+    flex-basis: 25%;
+  }
+}
+.portfolio .images .box img {
+  max-width: 100%;
+  transition: var(--transition);
+}
+.portfolio .images .box:hover img{
+  transform: rotate(4deg) scale(1.2);
+}
+.portfolio .images .box .caption{
+  position: absolute;
+  left: 0;
+  padding: 10px 20px;
+  background-color: white;
+  width: 100%;
+  transition: var(--transition);
+  bottom: -100%;
+  padding: 25px;
+}
+.portfolio .images .box .caption h4 {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.portfolio .images .box .caption p {
+  color: var(--main-color);
+  font-size: 13px;
+}
+.portfolio .more {
+  background-color: var(--main-color);
+  color: white;
+  text-transform: uppercase;
+  margin: 35px auto 70px;
+  padding: 10px 40px;
+  display: block;
+  width: fit-content;
 }
 /* End Portfolio */
+
+/* Start Video section  */
+.video-section {
+  position: relative;
+}
+.video-section::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 4px);
+  top: 0;
+  left: 0;
+  background-color: rgb(0 0 0 / 40%);
+}
+.video-section .video video{
+  width: 100%;
+}
+.video-section .text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--transparent-color);
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+.video-section .text h2 {
+  text-transform: uppercase;
+  margin: 30px 0;
+  font-weight: normal;
+}
+.video-section .text p {
+  text-transform: lowercase;
+  margin-bottom: 40px;
+}
+.video-section .text button {
+  border: none;
+  background-color: #111;
+  color: white;
+  text-transform: uppercase;
+  padding: 5px 30px;
+  margin-bottom: 30px;
+}
+@media (max-width : 767px ) {
+  .video-section .text h2{
+    margin: 15px 0 7.5px;
+    font-size: 20px;
+  }
+  .video-section .text p {
+    text-transform: lowercase;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  .video-section .text button {
+    padding: 5px 20px;
+    margin-bottom: 15px;
+    font-size: 15px;
+  }
+}
+/* End Video section  */
+
+/* Start About section  */
+.about {
+  padding-top: var(--sercices-padding);
+  overflow: hidden
+}
+.about .container .image img{
+  width: 100%;
+  position: relative;
+  right: 6%;
+  bottom: -120px;
+  margin-top: -120px;
+}
+@media (max-width : 767px ) {
+  .about .container .image img{
+    bottom: -60px;
+    right: 4.5%;
+    margin-top: -60px;
+  }
+}
+/* Start About section  */
