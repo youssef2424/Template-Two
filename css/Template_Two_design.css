@@ -2,7 +2,7 @@
 :root {
   --main-color : #19c8fa ;
   --transparent-color : rgb(15 116 143 / 60%) ;
-  --sercices-padding : 100px ;
+  --section-padding : 100px ;
   --p-color : #777 ;
   --transition : 0.3s;
 }
@@ -243,7 +243,7 @@ header nav .form i {
 .landing {
   min-height: 100vh;
   background-color: #1f2021;
-  background-image: url(/images/landing.jpg);
+  background-image: url(../images/landing.jpg );
   background-size: cover;
   position: relative;
 }
@@ -338,8 +338,8 @@ header nav .form i {
 
 /* Start services */
 .services {
-  padding-top: var(--sercices-padding);
-  padding-bottom: var(--sercices-padding);
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
 }
 @media (min-width : 768px) {
   .services .services-container {
@@ -379,11 +379,11 @@ header nav .form i {
 /* End services */
 /* Start Design */
 .design {
-  padding-top: var(--sercices-padding);
-  padding-bottom: var(--sercices-padding);
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
   height: 600px;
   position: relative;
-  background-image: url(/images/design-features.jpg );
+  background-image: url(../images/design-features.jpg );
   background-size: cover;
   display: flex;
   align-items: center;
@@ -409,7 +409,7 @@ header nav .form i {
 }
 .design .image img {
   position: relative;
-  top: 130px;
+  top: 125px;
 }
 @media (max-width: 767px) {
   .design {
@@ -448,7 +448,7 @@ header nav .form i {
 /* End Design */
 /* Start Portfolio */
 .portfolio {
-  padding-top: var(--sercices-padding);
+  padding-top: var(--section-padding);
 }
 .portfolio .container ul {
   display: flex;
@@ -467,7 +467,7 @@ header nav .form i {
   padding: 5px 10px;
   margin-left: 5px;
   font-size: 15px;
-}
+  }
 }
 .portfolio .container ul .active {
   background-color: var(--main-color);
@@ -593,21 +593,606 @@ header nav .form i {
 
 /* Start About section  */
 .about {
-  padding-top: var(--sercices-padding);
+  padding-top: var(--section-padding);
   overflow: hidden
 }
-.about .container .image img{
-  width: 100%;
+.about .container img{
   position: relative;
-  right: 6%;
+  max-width: 100%;
   bottom: -120px;
   margin-top: -120px;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 @media (max-width : 767px ) {
-  .about .container .image img{
+  .about .container img{
     bottom: -60px;
-    right: 4.5%;
     margin-top: -60px;
   }
 }
-/* Start About section  */
+/* End About section  */
+
+/* Start statistics */
+.statis {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-image: url(../images/stats.png);
+  background-size: cover;
+  text-align: center;
+  position: relative;
+}
+.statis::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(0 0 0 / 60%);
+}
+.statis .container{
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.statis .container .box {
+  background-color: var(--transparent-color);
+  color: white;
+  padding: 50px;
+  max-width: 100%;
+}
+@media (max-width: 767px) {
+  .statis .container .box {
+    flex-basis: 100%;
+    padding: 40px 20px ;
+  }
+  .statis .container .box:not(:last-child) {
+    border-bottom: 1px solid white;
+  }
+}
+@media (min-width: 768px) {
+  .statis .container .box {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .statis .container .box {
+    flex-basis: 25%;
+  }
+}
+.statis .container .box i {
+  width: 40px;
+  height: 40px;
+  background-color: #111;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 10px;
+}
+.statis .container .box .num {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0 0 15px;
+}
+.statis .container .box p {
+  font-size: 15px ;
+}
+/* End statistics */
+
+/* Start testimonials & My-skills section  */
+.my-skills {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.my-skills .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media (min-width: 992px) {
+  .my-skills .container > div {
+    flex-basis: 45% ;
+  }
+}
+.my-skills .container > div > h3 {
+  margin: 0 0 30px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 25px;
+}
+.my-skills .container > div > p {
+  margin: 0px 0 60px;
+  text-align: center;
+  color: var(--p-color);
+  line-height: 2;
+  font-size: 16px;
+}
+.my-skills .container > div > .contant {
+  display: flex;
+  margin-bottom: 30px;
+  align-items: center;
+}
+.my-skills .container > div > .contant img {
+  width: 100px;
+  border-radius: 50%;
+  margin-right: 50px;
+}
+@media (max-width : 767px) {
+  .my-skills .container > div > .contant {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .my-skills .container > div > .contant img {
+    margin-right: 20px;
+    width: 80px;
+    margin-bottom: 15px;
+    border-radius: 25%;
+  }
+}
+.my-skills .container > div > .contant .text {
+  line-height: 1.8;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+}
+.my-skills .container > div > .contant .text p {
+  margin-bottom: 15px;
+  text-align: end;
+  color: var(--p-color);
+}
+.my-skills .container > div .bullets {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.my-skills .container > div .bullets li {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #777;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+@media (max-width: 767px) {
+  .my-skills .container > div .bullets li {
+    width: 12px;
+    height: 12px;
+  }
+}
+.my-skills .container > div .bullets .active {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+.my-skills .skills .prog-holder {
+  margin-bottom: 35px;
+}
+.my-skills .skills .prog-holder h4 {
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+.my-skills .skills .prog-holder .prog {
+  height: 25px;
+  background-color: #dedadc;
+}
+.my-skills .skills .prog-holder .prog span {
+  display: block;
+  height: 100%;
+  background-color: var(--main-color);
+  position: relative;
+}
+.my-skills .skills .prog-holder .prog span::before {
+  content: attr(data-progress);
+  position: absolute;
+  background: #222;
+  color: white;
+  top: -39px;
+  right: -19px;
+  padding: 3px;
+  border-radius: 5px;
+}
+.my-skills .skills .prog-holder .prog span::after {
+  content: '';
+  position: absolute;
+  border-width: 9px;
+  border-style: solid;
+  border-color: #222 transparent transparent transparent;
+  right: -9px;
+  top: -15px;
+}
+/* End testimonials & My-skills section  */
+
+/* Start Quote */
+.quote {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-image: url(../images/quote.jpg);
+  background-size: cover;
+  position: relative;
+}
+.quote::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(0 0 0 / 70%);
+}
+.quote .text {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.quote .text q{
+  font-size: 30px;
+  margin-bottom: 15px;
+  display: block;
+}
+.quote .text q::before{
+  font-family: 'Font Awesome 5 Free';
+  content: '\f10d';
+  font-size: 10px ;
+  font-weight: 900;
+  position: absolute;
+  left: 35px;
+  top: 5px;
+}
+.quote .text q::after{
+  font-family: 'Font Awesome 5 Free';
+  content: '\f10e';
+  font-size: 10px ;
+  font-weight: 900;
+  position: absolute;
+  right: 490px;
+  top: 42px;
+}
+@media (max-width : 767px) {
+  .quote .text q {
+    font-size: 25px;
+    line-height: 1.3;
+  }
+  .quote .text q::before{
+    left: 15px;
+    top: 7px;
+  }
+  .quote .text q::after{
+    right: 110px;
+    top: 105px;
+  }
+}
+@media (min-width : 768px) {
+  .quote .text q::before{
+    left: -5px;
+    top: 6px;
+  }
+  .quote .text q::after{
+    right: 110px;
+    top: 40px;
+  }
+}
+@media (min-width : 992px) {
+  .quote .text q::before{
+    left: 35px;
+    top: 5px;
+  }
+  .quote .text q::after{
+    right: 490px;
+    top: 42px;
+  }
+}
+/* End Quote */
+/* Start Pricing */
+.pricing  {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.pricing .plans {
+  display: grid;
+  grid-template-columns:repeat(auto-fill, minmax(250px, 1fr)) ;
+  gap: 35px;
+}
+.pricing .plans .plan {
+  text-align: center;
+  background-color: #fcfcfc;
+}
+@media (max-width : 767px) {
+  .pricing .plans .plan {
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+  }
+  .pricing .plans {
+    gap: 10px;
+  }
+}
+.pricing .plans .plan .head{
+border-top: 1px solid var(--main-color);
+border-bottom: 1px solid var(--main-color);
+padding-bottom: 25px;
+}
+.pricing .plans .plan .head h4 {
+  font-weight: normal;
+  margin: 20px auto 10px;
+  text-transform: uppercase;
+}
+.pricing .plans .plan .head .num {
+  font-size: 45px;
+  font-weight: 600;
+  color: #222;
+}
+.pricing .plans .plan .head .num::before {
+  content: '$';
+  position: relative;
+  font-size: 17px;
+  top: -20px;
+}
+.pricing .plans .plan .head .num::after {
+  content: '/MO';
+  position: relative;
+  font-size: 15px;
+}
+.pricing .plans .plan ul {
+  border-bottom: 1px solid var(--main-color);
+}
+.pricing .plans .plan ul li{
+  padding: 20px;
+  position: relative;
+}
+.pricing .plans .plan ul li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  width: 140px;
+  height: 1px;
+  background-color: var(--main-color);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.pricing .plans .plan .footer {
+  padding: 15px 30px ;
+  border: 1px solid var(--main-color);
+  background-color: var(--main-color);
+  margin: 30px auto 60px;
+  width: fit-content;
+} 
+.pricing .plans .plan .footer a{
+  color: white ;
+  display: block;
+} 
+@media (max-width : 767px) {
+  .pricing .plans .plan .footer{
+    background-color: #fcfcfc;
+  }
+  .pricing .plans .plan .footer a{
+    color: black ;
+  } 
+}
+.pricing .container > p {
+  text-align: center;
+}
+.pricing .container > a {
+  text-align: center;
+  display: block;
+  padding: 15px 30px;
+  background-color: var(--main-color);
+  width: fit-content;
+  color: white;
+  margin: 25px auto 0;
+}
+/* End Pricing */
+
+/* Start Subscribe */
+.subscribe {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-image: url(../images/subscribe.jpg);
+  background-size: cover;
+  position: relative;
+  color: white;
+}
+.subscribe::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(0 0 0 / 50%);
+}
+.subscribe .container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+@media (max-width : 991px) {
+  .subscribe .container {
+    flex-direction: column;
+  }
+}
+.subscribe .container form {
+  position: relative;
+  display: flex;
+  width: 500px;
+  max-width: 100%;
+}
+.subscribe .container form i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+}
+.subscribe .container form input[type="email"] {
+  background: none;
+  border: 1px solid white;
+  border-right: none;
+  padding: 10px 20px 10px 60px;
+  caret-color: var(--main-color);
+  color: white;
+  width: calc(100% - 130px);
+}
+.subscribe .container form::placeholder {
+  color: white;
+}
+.subscribe .container form input[type="submit"] {
+  width: 130px;
+  background-color: var(--main-color);
+  color: white;
+  border: 1px solid white;
+  border-left: none;
+  text-transform: uppercase;
+}
+.subscribe .container form input[type="email"]:focus,
+.subscribe .container form input[type="submit"]:focus {
+  outline: none;
+}
+.subscribe .container p {
+  line-height: 1.4;
+  padding-left: 60px;
+  flex-basis: 60%;
+}
+@media (max-width : 991px) {
+  .subscribe .container p {
+    margin: 20px 30px;
+    padding: 0;
+  }
+}
+/* End Subscribe */
+
+/* Start Contact */
+.contact {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.contact .container .content {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width : 767px) {
+  .contact .container .content {
+    flex-direction: column;
+  }
+}
+.contact .container .content form {
+  flex-basis: 70%;
+}
+.contact .container .content form .main-input{
+  padding: 20px;
+  display: block;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 30px;
+  line-height: 1;
+}
+.contact .container .content form .main-input:focus {
+  outline: none;
+}
+.contact .container .content form textarea.main-input {
+  height: 200px;
+}
+.contact .container .content form input[type="submit"] {
+  background-color: var(--main-color);
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  padding: 20px 40px;
+  display: flex;
+  margin-left: auto;
+  cursor: pointer;
+}
+@media (max-width : 767px) {
+  .contact .container .content form input[type="submit"] {
+    padding: 15px 30px;
+    margin: auto;
+  }
+}
+.contact .container .info {
+  flex-basis: 25%;
+}
+@media (max-width : 767px) {
+  .contact .container .info {
+    order: -2;
+    margin-left: 5px;
+  }
+}
+.contact .container .info h4{
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.contact .container .info .phone{
+  display: block;
+  margin-bottom: 10px;
+  color: var(--p-color);
+}
+.contact .container .info h4:nth-of-type(2) {
+  margin-top: 135px;
+}
+.contact .container .info address {
+  line-height: 2;
+  font-size: 15px;
+  color: var(--p-color);
+}
+@media (max-width : 767px) {
+  .contact .container .info h4{
+    margin-bottom: 15px;
+  }
+  .contact .container .info h4:nth-of-type(2) {
+    margin-top: 30px;
+  }
+  .contact .container .info .phone,
+  .contact .container .info address {
+    margin: 0 0 20px 10px;
+
+  }
+}
+/* End Contact */
+
+/* Start Footer  */
+footer {
+  padding-top: calc( var(--section-padding)/ 2);
+  padding-bottom: calc( var(--section-padding)/ 2);
+  background-image: url(../images/subscribe.jpg);
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+footer::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(0 0 0 / 50%);
+}
+footer .container {
+  position: relative;
+}
+footer .container .logo {
+  margin-bottom: 20px;
+}
+footer .container h3 {
+  font-weight: normal;
+  font-size: 22px;
+  text-transform: uppercase;
+  border-bottom: 1px solid white;
+  width: fit-content;
+  margin: 0 auto 20px;
+  padding: 20px;
+}
+footer .container .links a{
+  font-size: 20px;
+  padding: 15px;
+  color: white;
+}
+footer .container p {
+  margin-top: 45px;
+  font-weight: 500;
+}
+footer .container p span{
+  color: var(--main-color);
+}
+/* End Footer  */
