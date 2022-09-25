@@ -2,7 +2,7 @@
 created just by HTML &amp; CSS
 
 ## learned from ...
-Osama Elzero on Youtube, 
+Osama Elzero on YouTube, 
 and am added some changes .
 
 ### The design from ...
